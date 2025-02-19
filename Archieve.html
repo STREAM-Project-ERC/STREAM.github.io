@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizational Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: ltr;
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tree {
+            list-style-type: none;
+        }
+        .tree li {
+            margin: 10px 0;
+        }
+        .tree a {
+            text-decoration: none;
+            background-color: #004466;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .tree a:hover {
+            background-color: #002233;
+        }
+        .sub-list {
+            margin-left: 20px;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Organizational Structure</h2>
+    <ul class="tree">
+        <li>🏠 <strong>Home</strong></li>
+
+        <li>📚 <strong>Trainings</strong>
+            <ul class="sub-list">
+                <li><a href="files/quarter.pdf">📂 Quarter Report</a></li>
+                <li><a href="files/final.pdf">📂 Final Report</a></li>
+                <li>📋 <strong>Nbs</strong>
+                    <ul class="sub-list">
+                        <li><a href="files/nbs_report.pdf">📜 Report</a></li>
+                        <li><a href="files/nbs_materials.zip">📦 Materials</a></li>
+                        <li><a href="files/nbs_attendance.xlsx">📝 Attendance Sheet</a></li>
+                        <li><a href="files/nbs_feedback.pdf">💬 Feedback</a></li>
+                        <li><a href="files/nbs_media.zip">📷 Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>📑 <strong>Master Reports</strong></li>
+
+        <li>🤝 <strong>Stakeholders Engagement</strong>
+            <ul class="sub-list">
+                <li>📅 <strong>Events</strong>
+                    <ul class="sub-list">
+                        <li><a href="files/stakeholders.xlsx">📊 Google Sheet</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>📷 <strong>Media</strong>
+            <ul class="sub-list">
+                <li><a href="files/training_media.zip">🎥 Training Media</a></li>
+                <li><a href="files/stakeholders_media.zip">🎥 Stakeholders Media</a></li>
+                <li><a href="files/research_media.zip">🎥 Research Media</a></li>
+            </ul>
+        </li>
+
+        <li>📊 <strong>Research</strong>
+            <ul class="sub-list">
+                <li><a href="files/government_letter.pdf">📜 Government Letter</a></li>
+                <li><a href="files/working_group.pdf">📜 Working Group</a></li>
+                <li><a href="files/beni_suef_analysis.pdf">📜 Beni Suef System Analysis</a></li>
+                <li><a href="files/secondary_data.xlsx">📜 Secondary Data</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
