@@ -7,8 +7,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            direction: ltr;
-            text-align: left;
             background-color: #f4f4f4;
             padding: 20px;
             margin: 0;
@@ -24,13 +22,14 @@
         h2 {
             color: #004466;
             margin-bottom: 20px;
+            text-align: center;
         }
         .tree {
             list-style-type: none;
             padding: 0;
         }
         .tree li {
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .tree a {
             text-decoration: none;
@@ -52,9 +51,6 @@
         .sub-list li {
             margin: 10px 0;
         }
-        .icon {
-            margin-right: 10px;
-        }
         .collapsible {
             cursor: pointer;
             padding: 10px;
@@ -66,14 +62,15 @@
             background-color: #f9f9f9;
             border-radius: 5px;
             margin: 5px 0;
+            display: flex;
+            align-items: center;
         }
-        .active, .collapsible:hover {
+        .collapsible:hover {
             background-color: #ddd;
         }
         .content {
             padding: 0 18px;
             display: none;
-            overflow: hidden;
             background-color: #f1f1f1;
             border-radius: 5px;
         }
@@ -85,22 +82,29 @@
     <h2>Organizational Structure</h2>
     <ul class="tree">
         <li>🏠 <strong>Home</strong></li>
-        <li><button type="button" class="collapsible">📚 <strong>Trainings</strong>
-        <div class="content">
+
+        <li>
+            <button class="collapsible">📚 <strong>Trainings</strong></button>
+            <div class="content">
                 <ul class="sub-list">
-                     <li>📋 <strong>Nbs</strong>
-                    <ul class="sub-list">
-                        <li><a href="files/nbs_report.pdf">📜 Report</a></li>
-                        <li><a href="files/nbs_materials.zip">📦 Materials</a></li>
-                        <li><a href="files/nbs_attendance.xlsx">📝 Attendance Sheet</a></li>
-                        <li><a href="files/nbs_feedback.pdf">💬 Feedback</a></li>
-                        <li><a href="files/nbs_media.zip">📷 Media</a></li>
-                    </ul>
+                    <li>
+                        <button class="collapsible">📋 <strong>Nbs</strong></button>
+                        <div class="content">
+                            <ul class="sub-list">
+                                <li><a href="files/nbs_report.pdf">📜 Report</a></li>
+                                <li><a href="files/nbs_materials.zip">📦 Materials</a></li>
+                                <li><a href="files/nbs_attendance.xlsx">📝 Attendance Sheet</a></li>
+                                <li><a href="files/nbs_feedback.pdf">💬 Feedback</a></li>
+                                <li><a href="files/nbs_media.zip">📷 Media</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>   
         </li>
+
         <li>
-            <button type="button" class="collapsible">📑 <strong>Main Reports</strong></button>
+            <button class="collapsible">📑 <strong>Main Reports</strong></button>
             <div class="content">
                 <ul class="sub-list">
                     <li><a href="files/quarter.pdf">📂 Quarterly Report</a></li>
@@ -108,12 +112,13 @@
                 </ul>
             </div>
         </li>
+
         <li>
-            <button type="button" class="collapsible">🤝 <strong>Stakeholder Engagement</strong></button>
+            <button class="collapsible">🤝 <strong>Stakeholder Engagement</strong></button>
             <div class="content">
                 <ul class="sub-list">
                     <li>
-                        <button type="button" class="collapsible">📅 <strong>Events</strong></button>
+                        <button class="collapsible">📅 <strong>Events</strong></button>
                         <div class="content">
                             <ul class="sub-list">
                                 <li><a href="files/stakeholders.xlsx">📊 Google Sheet Table</a></li>
@@ -123,8 +128,9 @@
                 </ul>
             </div>
         </li>
+
         <li>
-            <button type="button" class="collapsible">📷 <strong>Media</strong></button>
+            <button class="collapsible">📷 <strong>Media</strong></button>
             <div class="content">
                 <ul class="sub-list">
                     <li><a href="files/training_media.zip">🎥 Training Media</a></li>
@@ -133,8 +139,9 @@
                 </ul>
             </div>
         </li>
+
         <li>
-            <button type="button" class="collapsible">📊 <strong>Research</strong></button>
+            <button class="collapsible">📊 <strong>Research</strong></button>
             <div class="content">
                 <ul class="sub-list">
                     <li><a href="files/government_letter.pdf">📜 Government Letter</a></li>
@@ -148,18 +155,20 @@
 </div>
 
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-    for (var i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+        var coll = document.querySelectorAll(".collapsible");
+        coll.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         });
-    }
+    });
 </script>
 
 </body>
