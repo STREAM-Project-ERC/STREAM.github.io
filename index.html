@@ -11,18 +11,26 @@
             text-align: left;
             background-color: #f4f4f4;
             padding: 20px;
+            margin: 0;
         }
         .container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #004466;
+            margin-bottom: 20px;
         }
         .tree {
             list-style-type: none;
+            padding: 0;
         }
         .tree li {
-            margin: 10px 0;
+            margin: 15px 0;
         }
         .tree a {
             text-decoration: none;
@@ -31,6 +39,7 @@
             padding: 10px 15px;
             border-radius: 5px;
             display: inline-block;
+            transition: background-color 0.3s ease;
         }
         .tree a:hover {
             background-color: #002233;
@@ -38,6 +47,35 @@
         .sub-list {
             margin-left: 20px;
             list-style-type: none;
+            padding: 0;
+        }
+        .sub-list li {
+            margin: 10px 0;
+        }
+        .icon {
+            margin-right: 10px;
+        }
+        .collapsible {
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .active, .collapsible:hover {
+            background-color: #ddd;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -47,12 +85,10 @@
     <h2>Organizational Structure</h2>
     <ul class="tree">
         <li>🏠 <strong>Home</strong></li>
-
-        <li>📚 <strong>Trainings</strong>
-            <ul class="sub-list">
-                <li><a href="files/quarter.pdf">📂 Quarter Report</a></li>
-                <li><a href="files/final.pdf">📂 Final Report</a></li>
-                <li>📋 <strong>Nbs</strong>
+        <li><button type="button" class="collapsible">📚 <strong>Trainings</strong>
+        <div class="content">
+                <ul class="sub-list">
+                     <li>📋 <strong>Nbs</strong>
                     <ul class="sub-list">
                         <li><a href="files/nbs_report.pdf">📜 Report</a></li>
                         <li><a href="files/nbs_materials.zip">📦 Materials</a></li>
@@ -60,40 +96,71 @@
                         <li><a href="files/nbs_feedback.pdf">💬 Feedback</a></li>
                         <li><a href="files/nbs_media.zip">📷 Media</a></li>
                     </ul>
-                </li>
-            </ul>
+                </ul>
+            </div>   
         </li>
-
-        <li>📑 <strong>Master Reports</strong></li>
-
-        <li>🤝 <strong>Stakeholders Engagement</strong>
-            <ul class="sub-list">
-                <li>📅 <strong>Events</strong>
-                    <ul class="sub-list">
-                        <li><a href="files/stakeholders.xlsx">📊 Google Sheet</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <li>
+            <button type="button" class="collapsible">📑 <strong>Main Reports</strong></button>
+            <div class="content">
+                <ul class="sub-list">
+                    <li><a href="files/quarter.pdf">📂 Quarterly Report</a></li>
+                    <li><a href="files/final.pdf">📂 Final Report</a></li>
+                </ul>
+            </div>
         </li>
-
-        <li>📷 <strong>Media</strong>
-            <ul class="sub-list">
-                <li><a href="files/training_media.zip">🎥 Training Media</a></li>
-                <li><a href="files/stakeholders_media.zip">🎥 Stakeholders Media</a></li>
-                <li><a href="files/research_media.zip">🎥 Research Media</a></li>
-            </ul>
+        <li>
+            <button type="button" class="collapsible">🤝 <strong>Stakeholder Engagement</strong></button>
+            <div class="content">
+                <ul class="sub-list">
+                    <li>
+                        <button type="button" class="collapsible">📅 <strong>Events</strong></button>
+                        <div class="content">
+                            <ul class="sub-list">
+                                <li><a href="files/stakeholders.xlsx">📊 Google Sheet Table</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </li>
-
-        <li>📊 <strong>Research</strong>
-            <ul class="sub-list">
-                <li><a href="files/government_letter.pdf">📜 Government Letter</a></li>
-                <li><a href="files/working_group.pdf">📜 Working Group</a></li>
-                <li><a href="files/beni_suef_analysis.pdf">📜 Beni Suef System Analysis</a></li>
-                <li><a href="files/secondary_data.xlsx">📜 Secondary Data</a></li>
-            </ul>
+        <li>
+            <button type="button" class="collapsible">📷 <strong>Media</strong></button>
+            <div class="content">
+                <ul class="sub-list">
+                    <li><a href="files/training_media.zip">🎥 Training Media</a></li>
+                    <li><a href="files/stakeholders_media.zip">🎥 Engagement Media</a></li>
+                    <li><a href="files/research_media.zip">🎥 Research Media</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <button type="button" class="collapsible">📊 <strong>Research</strong></button>
+            <div class="content">
+                <ul class="sub-list">
+                    <li><a href="files/government_letter.pdf">📜 Government Letter</a></li>
+                    <li><a href="files/working_group.pdf">📜 Working Group</a></li>
+                    <li><a href="files/beni_suef_analysis.pdf">📜 Beni Suef System Analysis</a></li>
+                    <li><a href="files/secondary_data.xlsx">📜 Secondary Data</a></li>
+                </ul>
+            </div>
         </li>
     </ul>
 </div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
